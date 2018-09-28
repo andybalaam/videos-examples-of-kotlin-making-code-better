@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+
+
+a_re = re.compile(r'^\<a name="slide_\d*"\>\</a\>\n$')
+
+slide_num = 1
+for ln in sys.stdin:
+    if a_re.match(ln):
+        sys.stdout.write('<a name="slide_%d"></a>\n' % slide_num)
+        slide_num += 1
+    else:
+        sys.stdout.write(ln)
