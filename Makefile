@@ -1,5 +1,6 @@
 
 all:
+	echo "try 'make renum' or 'make upload'"
 
 upload:
 	rsync -r \
