@@ -252,7 +252,7 @@ table.moreinfo
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     padding: 1%;
 }
 
@@ -263,7 +263,7 @@ table.moreinfo th
     width: 30%;
     padding: 1%;
     padding-right: 5%;
-    vertical-align: bottom;
+    vertical-align: middle;
     font-size: 90%;
 }
 

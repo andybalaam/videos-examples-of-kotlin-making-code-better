@@ -1,6 +1,6 @@
 This currently includes:
 
-Examples I have made:
+Original version:
 
 * value objects - Thing
 * default & named parameters - Message
@@ -9,9 +9,11 @@ Examples I have made:
 * conditional expressions & sealed classes - Retry, RetryClass
 * primary and secondary constructors - Requester
 
+Longer version:
+
+* streams - Streams
+* wish list
+
 For a longer version of this talk, consider including:
 
-* conditional expressions - Emitter
 * explicit inheritance
-* lambdas
-* streams - Streams
