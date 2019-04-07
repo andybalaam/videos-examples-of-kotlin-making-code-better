@@ -35,12 +35,13 @@ This work is licensed under a
     <li><a class="go_to_slide" href="#slide_3">Things that are good</a></li>
     <li>Examples:
     <ul>
-    <li><a class="go_to_slide" href="#slide_5">Value objects</a></li>
-    <li><a class="go_to_slide" href="#slide_11">Parameters</a></li>
-    <li><a class="go_to_slide" href="#slide_15">Null safety</a></li>
-    <li><a class="go_to_slide" href="#slide_22">Immutability</a></li>
-    <li><a class="go_to_slide" href="#slide_27">Handling cases</a></li>
-    <li><a class="go_to_slide" href="#slide_31">Constructors</a></li>
+    <li><a class="go_to_slide" href="#slide_7">Value objects</a></li>
+    <li><a class="go_to_slide" href="#slide_13">Parameters</a></li>
+    <li><a class="go_to_slide" href="#slide_17">Null safety</a></li>
+    <li><a class="go_to_slide" href="#slide_24">Immutability</a></li>
+    <li><a class="go_to_slide" href="#slide_29">Handling cases</a></li>
+    <li><a class="go_to_slide" href="#slide_33">Constructors</a></li>
+    <li><a class="go_to_slide" href="#slide_36">Streams</a></li>
     </ul></li>
 </ul>
 </div>
@@ -706,11 +707,51 @@ return when (code) {
 <a name="slide_36"></a>
 <div class="slide">
 <div class="slide_body">
+<h1>Streams</h1>
+<code class="java">static final List&lt;String&gt; hotDrinks =
+    Arrays.asList("tea", "coffee");
+
+public List&lt;String&gt; hotCustomers() {
+    return customers<em>.stream()</em>
+        .<i>filter</i>(
+            cust -&gt; hotDrinks<em>.stream()</em>.<i>anyMatch</i>(
+                drink -&gt; cust.drink.contains(drink)
+            )
+        )
+        .<i>map</i>(Customer::getName)
+        <em>.collect(Collectors.toList())</em>;
+}</code>
+</div>
+</div>
+
+
+<a name="slide_37"></a>
+<div class="slide">
+<div class="slide_body">
+<h1>Streams</h1>
+<code class="kotlin">val hotDrinks = listOf("tea", "coffee")
+
+fun hotCustomers(): List&lt;String&gt; {
+    return customers
+        .<i>filter</i> {
+            cust -&gt; hotDrinks.<i>any</i> {
+                cust.drink.contains(it)
+            }
+        }
+        .<i>map</i> {it.name}
+}</code>
+</div>
+</div>
+
+
+<a name="slide_38"></a>
+<div class="slide">
+<div class="slide_body">
 <h1>Summary</h1>
 <ul>
 <li>Common patterns are easy to do right, e.g.
     <ul>
-    <li>Value objects, immutable variables</li>
+    <li>Value objects, immutable variables, streams</li>
     <li>Construction and parameters</li>
     </ul>
 </li>
@@ -731,7 +772,7 @@ return when (code) {
 </div>
 
 
-<a name="slide_37"></a>
+<a name="slide_39"></a>
 <div class="slide">
 <div class="slide_body">
 <h1>More info</h1>
