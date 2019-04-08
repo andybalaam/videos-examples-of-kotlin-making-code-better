@@ -81,7 +81,7 @@ This work is licensed under a
 <div class="slide_body">
 <h1>Things that are good</h1>
 <ul>
-    <li>Separate values and behaviour</li>
+    <li>Separate values and algorithms</li>
     <li>Immutability</li>
     <li>Errors caught at compile time</li>
     <li>Declarative style</li>
@@ -146,7 +146,7 @@ Commons</address>
     private final String desc;
 
     public Thing(String <em>name</em>, String desc) {
-    this.<em>name</em> = <em>name</em>;
+        this.<em>name</em> = <em>name</em>;
         this.desc = desc;
     }
 
@@ -616,7 +616,7 @@ class FatalError(code: Long) : Response(code)
 class FastError(code: Long) : Response(code)
 class SlowError(code: Long) : Response(code)
 <i>// ...</i>
-return when (code) {
+return when (response) {
     is SlowError -&gt; now + (ONE_HOUR * tries)
     is FastError -&gt; now + ONE_MINUTE
     is FatalError -&gt; null
